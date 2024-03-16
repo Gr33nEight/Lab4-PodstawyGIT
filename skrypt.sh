@@ -17,4 +17,9 @@ elif [ "$1" == "--help" -o "$1" == "-h" ]; then
 	echo "--date|-d: Display current date"
 	echo "--logs|-l [number]: Create log files (defualt: 100)"
 	echo "--help|-h: Display this help message"
+elif [ "$1" == "--init" ]; then
+    git clone https://github.com/Gr33nEight/Lab4-PodstawyGIT.git repo_directory
+    export PATH="$PATH:$(pwd)/repo_directory"
+    echo "Repository cloned and added to PATH"
 fi
+
