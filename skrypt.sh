@@ -1,8 +1,8 @@
 #!/bin/bash
 date=$(date)
-if [ "$1" == "--date" ]; then
+if [ "$1" == "--date" -o "$1" == "-d" ]; then
 	echo "$(date)"
-elif [ "$1" == "--logs" ]; then
+elif [ "$1" == "--logs" -o "$1" == "-l" ]; then
 	if [ -n "$2" ]; then
 		number="$2"
 	else
@@ -12,9 +12,9 @@ elif [ "$1" == "--logs" ]; then
 		filename="log${i}.txt"
 		echo "$filename $0 $date" > "$filename"
 	done
-elif [ "$1" == "--help" ]; then
+elif [ "$1" == "--help" -o "$1" == "-h" ]; then
 	echo "Available options:"
-	echo "--date: Display current date"
-	echo "--logs: Create log files"
-	echo "--help: Display this help message"
-if
+	echo "--date|-d: Display current date"
+	echo "--logs|-l [number]: Create log files (defualt: 100)"
+	echo "--help|-h: Display this help message"
+fi
