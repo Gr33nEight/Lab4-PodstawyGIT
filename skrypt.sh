@@ -12,5 +12,9 @@ elif [ "$1" == "--logs" ]; then
 		filename="log${i}.txt"
 		echo "$filename $0 $date" > "$filename"
 	done
-fi
-	 
+elif [ "$1" == "--help" ]; then
+	echo "Available options:"
+	echo "--date: Display current date"
+	echo "--logs: Create log files"
+	echo "--help: Display this help message"
+if
